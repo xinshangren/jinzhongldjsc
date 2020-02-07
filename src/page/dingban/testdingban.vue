@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-list
-      id="newslist5"
+      id="newslist6"
       v-model="loading"
       :finished="finished"
       @load="onLoad"
@@ -11,21 +11,21 @@
       style="background: #F7F7F7;padding: 0 13px 13px 13px;overflow-y: auto;"
     >
       <div
-        style="margin-left: 32px;width: 90%;display: flex; position: relative; margin-top: 8px; border-radius:12px;border: 1px solid #EFEFEF; background: #ffffff;height: 87px;"
+        style="margin-left: 32px;width: 90%;display: flex; position: relative; margin-top: 4px; border-radius:12px;border: 1px solid #EFEFEF; background: #ffffff;height: 87px;"
         v-for="(item,index) of list"
         :key="item.id"
       >
         <input
           v-if="item.dingid != null"
-          :id="'qxqkfqid'+index"
+          :id="'testdingban'+index"
           hidden
           type="checkbox"
           :value="item.dingid"
           v-model="callPhoneList"
-          @change="addPhone"
+          v-on:change="addPhone($event)"
         />
-        <label @click="errorMsg(item)" :for="'qxqkfqid'+index" class="active"></label>
-        <img :src="item.img" style="margin: 14px 14px 15px 22px; width: 45px; height: 45px;" />
+        <label @click="errorMsg(item)" :for="'testdingban'+index" class="active"></label>
+        <img :src="item.img" style="margin: 14px 14px 15px 22px;  width: 45px; height: 45px;" />
         <div style="color: #333333;font-size: 15px;margin-top: 20px;">
           <div style="max-width:60px;">{{item.realname}}</div>
           <div style="margin-top: 23px;margin-left: -53px;font-size: 13px;">{{item.dutyName}}</div>
@@ -49,6 +49,15 @@
         </div>
       </div>
     </van-list>
+     <div style="border-radius:31px;box-shadow: rgba(34, 34, 34, 0.2) 0px 0px 5px;border: 1px solid rgba(34, 34, 34, 0.1);z-index: 2;display: flex; width: 25%; height: 44px; position: absolute;
+      left: 5px;bottom: 5px;background-color:#ffffff">
+      <div style=" width:100%;vertical-align: middle;display: flex;margin: 13px;">
+        <img id="all_pick" style="height: 20px;" v-if="all_pick_flag" src="../../assets/img/choice2.png"
+          @click="all_pick" />
+        <img id="all_pick" style="height: 20px;" v-else src="../../assets/img/choice1.png" @click="all_pick" />
+        <div style="font-size: 14px;margin-left: 10px;">全选</div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -59,9 +68,10 @@ import dd from "dingtalk-jsapi";
 Vue.use(PullRefresh);
 export default {
   name: "picsnews",
+  props:["callPhoneList_p"],
   data() {
     return {
-      userId: "8ae4804f6d39da6a016d4c928ede0119", //暂时默认
+      userId: "", //暂时默认
       error: false,
       list: [],
       loading: false, //是否处于加载状态
@@ -72,31 +82,80 @@ export default {
       corpId: "",
       callPhoneList: [],
       callButton: false,
-      map: {}
+      map: {},
+       all_pick_flag: false,
     };
   },
   mounted() {
     var orderHight1 = document.documentElement.clientHeight;
-    var heightlist = orderHight1 - 175;
-    document.getElementById("newslist5").style.height = heightlist + "px";
+    var heightlist = orderHight1 - 158;
+    document.getElementById("newslist6").style.height = heightlist + "px";
     this.gojq();
   },
   methods: {
-    addPhone: function() {
-      console.log("qxqkfq页面");
+     all_pick: function () {
+        var self = this;
+        if(self.all_pick_flag){
+          self.all_pick_flag = false;
+         
+          self.callPhoneList = [];
+          self.addPhone(null);
+        }else{
+          var list = self.list;
+          var list1 = [];
+          list.forEach(element => {
+            if(element.dingid!=null){
+               if(self.callPhoneList_p.indexOf(element.dingid)>-1){
+              }else{
+                list1.push(element.dingid);
+              }
+            }
+          });
+          var ls = list1.length;
+          var ll = self.callPhoneList_p.length;
+          if(ll+ls>35){
+            this.$toast("多人通话选择人数不得大于35人");
+            return false;
+          }else{
+            self.all_pick_flag = true;
+            list.forEach(element => {
+              if(element.dingid!=null){
+                if(self.callPhoneList.indexOf(element.dingid)>-1){
+
+                }else{
+                  self.callPhoneList.push(element.dingid);
+                }
+              }
+            });
+            self.addPhone(null);
+          }
+        }
+      },
+    addPhone: function(e) {
+       var self = this;
+        if(e!= null && e.target.checked){
+          if (self.callPhoneList_p.length >= 35) {
+            console.log(self.callPhoneList)
+            e.target.checked = false;
+            self.callPhoneList.pop();
+            console.log(self.callPhoneList)
+            this.$toast("多人通话选择人数不得大于35人");
+            return false;
+          }
+        }
+      console.log("testdingban页面");
       this.map.callPhoneList = this.callPhoneList;
-      this.map.flag = "qxqkfq";
+      this.map.flag = "testdingban";
       console.log(this.map);
       this.$emit("addPhone", this.map);
     },
     getUserOrDepart: function() {
       var params = {
-        departId: "402809816c1cc114016c1cc330320003"
+        departId: "8a8180c97018f74601701a042cf4001c"
       };
       httpMethod
         .getUserOrDepart(params)
         .then(res => {
-          console.log(res);
           if (res.success == "1") {
             this.list = this.list.concat(res.userList);
             for (var i = 0; i < this.list.length; i++) {
@@ -119,6 +178,12 @@ export default {
       this.isLoading = false;
       this.finished = true;
     },
+    errorMsg: function(item) {
+      if (item.dingid != null) {
+      } else {
+        this.$toast("该用户暂未注册");
+      }
+    },
     onLoad() {
       //上拉加载
       this.error = false;
@@ -127,13 +192,8 @@ export default {
     },
     gojq: function() {
       var currentUrl = window.location.href; //当前页面地址
-      console.log(currentUrl);
-      if (window.location.hash == "#/") {
-        currentUrl = currentUrl.substring(
-          0,
-          currentUrl.indexOf(window.location.hash)
-        );
-      }
+       var number=currentUrl.indexOf("#");
+      currentUrl = currentUrl.substring(0,number);
       console.log(currentUrl);
       var params = {
         currentUrl: currentUrl
@@ -142,7 +202,6 @@ export default {
       httpMethod
         .getConfig(params)
         .then(res => {
-          console.log(res);
           if (res.success == "1") {
             var data = JSON.parse(res.config);
             this.corpId = data.corpId;
@@ -189,12 +248,6 @@ export default {
         .catch(err => {
           this.$toast(err);
         });
-    },
-    errorMsg: function(item) {
-      if (item.dingid != null) {
-      } else {
-        this.$toast("该用户暂未注册");
-      }
     },
     //打电话
     goDetile(item) {

@@ -16,22 +16,22 @@
       <!-- <van-tab id="tabone" v-show="isShowTabOne" title="工作群">
         <child5 @getWorkGroupList="getWorkGroupList"></child5>
       </van-tab> -->
-      <van-tab title="市委常委" id="8a8180c9700ff44e01701014c9940006">
+      <van-tab title="市委领导" id="8a8180c9700ff44e01701014c9940006">
         <child1 v-on:addPhone="addPhone"></child1>
       </van-tab>
 
-      <van-tab title="市政府" id="8a8180c9700ff44e01701015295f0008">
+      <van-tab title="政府领导" id="8a8180c9700ff44e01701015295f0008">
         <child2 style v-on:addPhone="addPhone"></child2>
       </van-tab>
-      <van-tab title="市委工作部门" id="8a8180c9700ff44e01701016140f000b">
+      <van-tab title="人大领导" id="8a8180c9700ff44e01701016140f000b">
         <child3 style v-on:addPhone="addPhone"></child3>
       </van-tab>
 
-      <van-tab title="市政府工作部门" id="8a8180c9700ff44e017010166e88000d">
+      <van-tab title="政协领导" id="8a8180c9700ff44e017010166e88000d">
         <child4 style v-on:addPhone="addPhone"></child4>
       </van-tab>
-      <van-tab title="各区县政府" id="402809816c1cc114016c1cc330320003">
-        <child6 style v-on:addPhone="addPhone"></child6>
+      <van-tab title="测试工作组" id="8a8180c97018f74601701a042cf4001c">
+        <child7 style v-on:addPhone="addPhone" ></child7>
       </van-tab>
     </van-tabs>
     <img
@@ -54,6 +54,7 @@ import child3 from "@/page/dingban/szx.vue";
 import child4 from "@/page/dingban/dsjyyj.vue";
 import child6 from "@/page/dingban/qxqkfq.vue";
 import child5 from "@/page/dingban/workq/workq.vue";
+import child7 from "@/page/dingban/testdingban.vue";
 import { httpMethod } from "../../api/getData.js";
 import global_variable from "../../api/global_variable.js";
 import vhtmlpanel from "@/components/HtmlPanel.vue";
@@ -291,7 +292,8 @@ export default {
     child3,
     child4,
     child5,
-    child6
+    child6,
+    child7
   }
 };
 </script>

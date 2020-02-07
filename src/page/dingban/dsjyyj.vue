@@ -30,7 +30,7 @@
           <div style="max-width:60px;">{{item.realname}}</div>
           <div style="margin-top: 23px;margin-left: -53px;font-size: 13px;">{{item.dutyName}}</div>
         </div>
-        <div style="display: flex; position: absolute; right: 10px;top: 10px;">
+        <div style="display: flex; position: absolute; right: 10px;top: 20px;">
           <img
             src="../../assets/img/phonecall.png"
             style="width: 50px;height:50px;"
@@ -121,7 +121,7 @@ export default {
     errorMsg: function(item) {
       if (item.dingid != null) {
       } else {
-        this.$toast("该用户未在'晋城智能办公平台'");
+        this.$toast("该用户暂未注册");
       }
     },
     onLoad() {
@@ -207,7 +207,7 @@ export default {
           });
         });
       } else {
-        this.$toast("该用户未在'晋城智能办公平台'");
+        this.$toast("该用户暂未注册");
       }
     },
     //发消息
@@ -223,7 +223,7 @@ export default {
           }
         });
       } else {
-        this.$toast("该用户未在'晋城智能办公平台'");
+        this.$toast("该用户暂未注册");
       }
     },
     goDing(item) {
@@ -267,7 +267,7 @@ export default {
           onFail: function() {}
         });
       } else {
-        this.$toast("该用户未在'晋城智能办公平台'");
+        this.$toast("该用户暂未注册");
       }
     },
     toast: function() {
