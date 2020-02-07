@@ -44,6 +44,8 @@ export default {
   },
   mounted() {
     this.itemEnti = this.$route.params.entity;
+    // console.log(this.itemEnti);
+    console.log(JSON.stringify(this.itemEnti));
     this.fileList = this.itemEnti.fileList;
     this.fileListnew = [];
     this.fileListnew = this.fileList;
