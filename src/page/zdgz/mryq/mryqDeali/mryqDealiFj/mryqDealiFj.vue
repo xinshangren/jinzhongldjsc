@@ -33,12 +33,13 @@ export default {
   mounted() {
     this.itemEnti = this.$route.params.entity;
     console.log(this.itemEnti);
-    $("#pmJjdivid p").each(function() {
-      $(this).attr("style", "font-size:15px;");
-    });
-    $("#pmJjdivid img").each(function() {
-      $(this).attr("style", "width:100%;");
-    });
+     setTimeout(() => {
+                $("#pmJjdivid img").css('width', '100%');
+                $("#pmJjdivid img").css('max-width', '100%');
+                $("#pmJjdivid p").each(function () {
+                  $(this).attr("style", "font-size:17px;");
+                });
+              }, 100);
   },
   methods: {
     openFj: function(item) {
