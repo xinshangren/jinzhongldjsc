@@ -1,0 +1,205 @@
+.xnylb_list_font{
+    font-size: 14px;
+}
+.threeTab{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    margin-top: 10px;
+}
+.oneTab{
+    width: 33%;
+    height: 70px;
+    background:url("../../../../../assets/img/mt_top_jt.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.twoTab{
+    width: 33%;
+    height: 70px;
+    background:url("../../../../../assets/img/mt_top_qy.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.thirdTab{
+    width: 33%;
+    height: 70px;
+    background:url("../../../../../assets/img/mt_top_xm.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.fontStyle{
+	font-family: MicrosoftYaHei;
+	font-size: 20px;
+    color: #333333;
+    margin-left: 50%;
+}
+.dateSelect{
+  
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+
+}
+.sx{
+
+        width: 4px;
+        height: 20px;
+        background-color: #3ca1ec;
+        border-radius: 2px;
+        line-height: 60px;
+        margin-left: 15px;
+
+}
+.tj_z{
+
+	font-family: MicrosoftYaHei;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 48px;
+	letter-spacing: 0px;
+    color: #333333;
+    margin-left: 10px;
+}
+.timeYear{
+    font-family: MicrosoftYaHei-Bold;
+	font-size: 20px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 48px;
+	letter-spacing: 0px;
+    color: #3ca1ec;
+    margin-left: 10px;
+}
+.xl{
+    width: 13px;
+    height: 13px;
+    margin-top: 5px;
+}
+
+.top_img{
+    height:56px;
+    position: absolute;
+    z-index: -1;
+}
+.top_title_select1{
+    color: rgb(25, 118, 211);font-size: 14px;text-align: left;padding-top: 15px;padding-left: 15px;
+}
+.top_title_select2{
+    color:#47d3ba;font-size: 14px;text-align: left;padding-top: 15px;padding-left: 15px;
+}
+.top_title_select3{
+    color: #fbb01c;font-size: 14px;text-align: left;padding-top: 15px;padding-left: 15px;
+}
+.top_title_noselect{
+    color: rgb(255, 255, 255);font-size: 14px;text-align: left;padding-top: 15px;padding-left: 15px;
+}
+.block_div_style{
+    position: relative;height:56px;
+}
+
+.twoLevel_left_div{
+    width: 25%;display: flex;height: 43px;background: #ffffff;border-right: 1px solid #f3f3f3;margin-top: 1px;
+}
+.ssgk_title1{
+    font-size:37px;color:#333333;text-align:center;
+    padding-top: 18px;
+}
+.ssgk_title_img{
+    z-index:-1; height: 200px;width: 100%;position: absolute;top: 0px;left: 0px;
+}
+.ssgk_title1_div{
+    width:50%;text-align:right;margin-right:17px;font-size:14px;color:#666666;
+    position: relative;
+}
+.ssgk_title2_div{
+    width:50%;text-align:left;margin-right:17px;font-size:14px;color:#666666; position: relative;
+}
+.you{
+    background: #75D492;
+}
+.liang{
+    background:#C5D686 
+}
+.qingdu{
+    background: #F0A15C ;
+}
+.zhongdu1{
+    background:#E35E5F  
+}
+
+.zhongdu{
+    background: #B83B5D;
+}
+.yanzhong{
+    background:#57155D 
+}
+
+.yuanquan{
+    width: 7px;height: 7px;border-radius: 30px;background: rgb(204, 204, 204);margin-top: 6px;margin-left:8px;
+}
+
+.echars_title{
+    position: relative;height: 40px;background: #ffffff;border-bottom: 1px solid #cccccc;
+    line-height:40px;
+    
+}
+.echars_titile_div{
+    border-left:2px solid #1976d2;font-size:14px;margin-left:12px;
+    padding-left: 10px;
+}
+
+.mescroll {
+    position: fixed;
+    top: 310px;
+    bottom: 0px;
+    height: auto;
+  }
+  .dialogNoSelect {
+	border: 1px solid #cccccc;
+	padding: 1px 15px 1px 15px;
+	border-radius: 33px;
+	font-size: 13px;
+	margin-left: 10px;
+	text-align: center;
+	margin-top: 4px;
+	background: #ffffff;
+}
+
+.dialogSelect {
+	border: 1px solid #1976D2;
+	padding: 1px 15px 1px 15px;
+	border-radius: 33px;
+	font-size: 13px;
+	margin-left: 10px;
+	text-align: center;
+	margin-top: 4px;
+	background: #f6fbff;
+	color: #1976D2;
+}
+
+.xny_qygmImg{
+    width: 44px;
+}
+
+.xny_qylxImg{
+    height: 20px;
+}
+.xny_qyxzImg{
+    width: 67px;
+}
+
+
+.van-search{
+    padding: 0%;
+}
+.van-tabs__line {
+    background-color: #3097FB;
+    margin-bottom: 2px;
+    height: 2px;
+}

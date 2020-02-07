@@ -1,0 +1,31 @@
+.van-tabs__line{
+    background-color:#3097FB;
+    width: 61px;
+    margin-bottom:2px;
+}
+#jjyx_tabs .van-sticky--fixed{
+    width:86%;
+}
+
+.dialogNoSelect {
+	border: 1px solid #cccccc;
+	padding: 1px 15px 1px 15px;
+	border-radius: 33px;
+	font-size: 13px;
+	margin-left: 10px;
+	text-align: center;
+	margin-top: 4px;
+	background: #ffffff;
+}
+
+.dialogSelect {
+	border: 1px solid #1976D2;
+	padding: 1px 15px 1px 15px;
+	border-radius: 33px;
+	font-size: 13px;
+	margin-left: 10px;
+	text-align: center;
+	margin-top: 4px;
+	background: #f6fbff;
+	color: #1976D2;
+}
