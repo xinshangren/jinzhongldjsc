@@ -1,5 +1,5 @@
 <template>
-  <div style="z-index: 1; position: absolute;top: 50px;">
+  <div style="z-index: 1; position: absolute;top: 59px;">
     <!--每日要闻start-->
     <div @click="godetile(65)" style="text-align: center;position: relative;">
       <img class="home_head_img" src="../../assets/img/headtop.png" />
@@ -218,7 +218,7 @@
       <!--政府服务舱start-->
       <div
         class="home_jjyxc_block"
-        style="height: 112px;padding-bottom:10px;margin: 8px 11px;width: 94%;"
+        style="height: 122px;padding-bottom:10px;margin: 8px 11px;width: 94%;"
       >
         <div style="text-align: center;position: relative;padding-top:0px;">
           <img style="width: 234px;" src="../../assets/img/head_bg3.png" />
@@ -291,7 +291,7 @@
       </div>
       <!--全域旅游舱end-->
       <!--区县直通舱start-->
-      <div>
+      <div style="background:#ffffff;">
         <div style="text-align: center;position: relative;padding-top: 0px;">
           <img style="width: 134px;" src="../../assets/img/head_bg2.png" />
           <div
@@ -300,19 +300,19 @@
           >区县直通舱</div>
         </div>
         <ul class="ui-row" style="margin-top: 20px;">
-           <li @click="godetile(25)" class="ui-col ui-col-33 home_ul_li_style">
+           <li @click="godetile(23)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map3.png" />
             <div class="home_ul_li_div">榆次区</div>
           </li>
-          <li @click="godetile(26)" class="ui-col ui-col-33 home_ul_li_style">
+          <li @click="godetile(24)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map4.png" />
             <div class="home_ul_li_div">太谷区</div>
           </li>
-          <li @click="godetile(23)" class="ui-col ui-col-33 home_ul_li_style">
+          <li @click="godetile(25)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map1.png" />
             <div class="home_ul_li_div">寿阳县</div>
           </li>
-          <li @click="godetile(24)" class="ui-col ui-col-33 home_ul_li_style">
+          <li @click="godetile(26)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map2.png" />
             <div class="home_ul_li_div">昔阳县</div>
           </li>
@@ -325,23 +325,23 @@
             <div class="home_ul_li_div">左权县</div>
           </li>
 
-          <li @click="godetile(28)" class="ui-col ui-col-33 home_ul_li_style">
+          <li @click="godetile(29)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map7.png" />
             <div class="home_ul_li_div">榆社县</div>
           </li>
-          <li @click="godetile(28)" class="ui-col ui-col-33 home_ul_li_style">
+          <li @click="godetile(30)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map8.png" />
             <div class="home_ul_li_div">祁县</div>
           </li>
-          <li @click="godetile(28)" class="ui-col ui-col-33 home_ul_li_style">
+          <li @click="godetile(31)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map9.png" />
             <div class="home_ul_li_div">平遥县</div>
           </li>
-          <li @click="godetile(28)" class="ui-col ui-col-33 home_ul_li_style">
+          <li @click="godetile(32)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map10.png" />
             <div class="home_ul_li_div">介休市</div>
           </li>
-          <li @click="godetile(28)" class="ui-col ui-col-33 home_ul_li_style">
+          <li @click="godetile(33)" class="ui-col ui-col-33 home_ul_li_style">
             <img class="home_ul_li_img" src="../../assets/img/map11.png" />
             <div class="home_ul_li_div">灵石县</div>
           </li>
@@ -351,7 +351,7 @@
       <!--区县直通舱end-->
     </div>
     <!--重点工作仓end-->
-  </div>
+  
 </template>
 
 <script>
