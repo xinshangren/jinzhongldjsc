@@ -437,7 +437,7 @@ export default {
     //   context.changeTabStyle(id);
     // });
     this.getCuruserid();
-    this.getFrequentlyApp('13620614683');
+    // this.getFrequentlyApp('13620614683');
   },
   methods: {
     returnParentList: function() {
