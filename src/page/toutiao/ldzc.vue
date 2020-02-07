@@ -38,25 +38,25 @@
         <div style="font-size: 12px;line-height:29px;width: 56px;margin-left:6px;">书记</div>
         <ul class="ui-row" style="width: 100%;margin-right: 15px;">
           <li
-            id="8a87821a6b1c0bb4016b1c113e2f0001"
+            id="2c9090bc701e993601701ecfe69a001e"
             class="ui-col ui-col-30 dialogSelect1"
             style="width:27%;"
-          >张志川</li>
+          >赵建平</li>
         </ul>
       </div>
       <div style="background: #ffffff;padding: 4px;display: flex;">
         <div style="font-size: 12px;line-height:29px;width: 56px;margin-left:6px;">副书记</div>
         <ul class="ui-row" style="width: 100%;margin-right: 15px;">
           <li
-            id="8a87821a6b1c0bb4016b1c12c2550004"
+            id="2c9090bc701e993601701ed17fd60021"
             class="ui-col ui-col-30 dialogNoSelect1"
             style="width:27%;float: left;"
-          >刘峰</li>
+          >常书铭</li>
           <li
-            id="8a8180c96ff6bcb6016ff9e86ced0022"
+            id="2c9090bc701e993601701ee48fee0026"
             class="ui-col ui-col-30 dialogNoSelect1"
             style="width:27%;float: left;"
-          >姚逊</li>
+          >尹乃明</li>
           <!-- <li id="8a87821a6b1c6361016b1c8128070001" class="ui-col ui-col-30 dialogNoSelect1" style="width:27%;float: left;">李根田</li> -->
         </ul>
       </div>
@@ -65,33 +65,48 @@
         <ul class="ui-row" style="width: 100%;margin-right: 15px;display: block;overflow: hidden;">
           <!-- <li id="8a87821a6b1c6361016b1c837d220004" class="dialogNoSelect1" style="width:27%;float: left;">赵沂旸</li> -->
           <li
-            id="8a87821a6b1c6361016b1c84ed36000a"
+            id="2c9090bc701e993601701eeeb50c004a"
             class="dialogNoSelect1"
             style="width:27%;float: left;"
-          >那志茂</li>
+          >王建忠</li>
           <li
-            id="8a87821a6b1c6361016b1c85c04b000d"
+            id="2c9090bc701e993601701eef6068004d"
             class="dialogNoSelect1"
             style="width:27%;float: left;"
-          >卫明喜</li>
+          >张志刚</li>
           <li
-            id="8a87821a6b1c6361016b1c88da620010"
+            id="2c9090bc701e993601701ef042fa0050"
             class="dialogNoSelect1"
             style="width:27%;float: left;"
-          >石云峰</li>
+          >丁利军</li>
           <li
-            id="8a87821a6b1c6361016b1c8c5c180015"
+            id="2c9090bc701e993601701ef112a50053"
             class="dialogNoSelect1"
             style="width:27%;float: left;"
-          >荆俊明</li>
+          >任秀红</li>
           <li
-            id="8a87821a6b1c6361016b1c8d38840018"
+            id="2c9090bc701e993601701ef1d4920056"
             class="dialogNoSelect1"
             style="width:27%;float: left;"
-          >范兆森</li>
+          >王兵</li>
+          <li
+            id="2c9090bc701e993601701ef26bd10059"
+            class="dialogNoSelect1"
+            style="width:27%;float: left;"
+          >贡琦</li>
+          <li
+            id="2c9090bc701e993601701ef34994005d"
+            class="dialogNoSelect1"
+            style="width:27%;float: left;"
+          >鹿建平</li>
+          <li
+            id="2c9090bc701e993601701ef50c410060"
+            class="dialogNoSelect1"
+            style="width:27%;float: left;"
+          >文竑烜</li>
         </ul>
       </div>
-      <div style="background: #ffffff;padding: 4px;display: flex;">
+      <!-- <div style="background: #ffffff;padding: 4px;display: flex;">
         <div style="font-size: 12px;line-height:29px;width: 56px;margin-left:6px;">秘书长</div>
         <ul class="ui-row" style="width: 100%;margin-right: 15px;">
           <li
@@ -100,7 +115,7 @@
             style="width:27%;"
           >孙世新</li>
         </ul>
-      </div>
+      </div> -->
       <div style="background: #ffffff;padding: 4px;display: flex;height: 8px;"></div>
     </div>
 
@@ -201,7 +216,7 @@ export default {
     $("#newslist1").css("height", heightlist + "px");
     $("#newslist11").css("height", heightlist + "px");
 
-    _this.getUserCms("8a87821a6b1c0bb4016b1c113e2f0001");
+    _this.getUserCms("2c9090bc701e993601701ecfe69a001e");
     $(".ui-row li").click(function() {
       var userid = $(this).attr("id");
       _this.getUserCms(userid);

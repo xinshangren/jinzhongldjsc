@@ -216,7 +216,7 @@ export const hbgjAirJs = {
             var cityRank = entity.rownum; //城市名称
             var dataCompositeIndex = entity.dataAqi; //值
             // nameList.push(name);
-            if (name === '晋城市') {
+            if (name === '晋中市') {
                 // showEcharsView1_ssgk1(result, rankList[i],value1,echarts);
                 rankStr = cityRank;
             }
@@ -228,7 +228,7 @@ export const hbgjAirJs = {
         for (var i = 0; i < result.length; i++) {
             var entity = result[i];
             var name = entity.cityName; //城市名称
-            if (name == '晋城市') {
+            if (name == '晋中市') {
                 var cityRank = entity.rownum; //城市名称
                 var dataCompositeIndex = entity.dataAqi; //值
                 nameList.push(name);
@@ -244,7 +244,7 @@ export const hbgjAirJs = {
         var wYValueList = [];
         for (var i = 0; i < result.length; i++) {
             var name = result[i].cityName; //城市名称
-            if (name === '晋城市') {
+            if (name === '晋中市') {
                 nyValueList.push(maxValue - 0.1 + 14);
                 wYValueList.push(maxValue + 14);
             }

@@ -206,7 +206,7 @@ export default {
               let cityName = enti.cityName;
                 let cityRank = enti.rownum; //城市名称
               //console.log(cityName);
-              if (cityName == "晋城市") {
+              if (cityName == "晋中市") {
                 var dataPollutant = resData.data.dataPollutant; //首要污染物
                 $("#rankPm_id").html("省内排名：" + cityRank+"\t\t\t\t\t\t\t\t首要污染物：" + dataPollutant);
                 // $("#rankPm_id").html("省内排名：" + (i + 1));

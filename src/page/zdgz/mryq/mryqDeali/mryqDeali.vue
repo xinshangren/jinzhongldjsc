@@ -44,6 +44,7 @@ export default {
   },
   mounted() {
     this.itemEnti = this.$route.params.entity;
+    var dd= this.itemEnti;
     this.fileList = this.itemEnti.fileList;
     this.fileListnew = [];
     this.fileListnew = this.fileList;
@@ -59,10 +60,13 @@ export default {
       }
     }
 
-    //console.log(this.itemEnti);
-    $("#pmJjdivid p").each(function() {
-      $(this).attr("style", "font-size:15px;");
-    });
+   setTimeout(() => {
+                $("#pmJjdivid img").css('width', '100%');
+                $("#pmJjdivid img").css('max-width', '100%');
+                $("#pmJjdivid p").each(function () {
+                  $(this).attr("style", "font-size:17px;");
+                });
+              }, 100);
   },
   methods: {
     openFj: function(item) {

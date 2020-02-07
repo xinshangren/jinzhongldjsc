@@ -34,11 +34,11 @@
           <img id="indexTabImg2" class="top_img" :src="indexTabImg2" />
         </div>
       </div>
-      <div class="ui-col ui-col" @click="selectIndexTab(3)">
+      <!-- <div class="ui-col ui-col" @click="selectIndexTab(3)">
         <div class="block_div_style">
           <img id="indexTabImg3" class="top_img" :src="indexTabImg3" />
         </div>
-      </div>
+      </div> -->
       <div class="ui-col ui-col" @click="selectIndexTab(4)">
         <div class="block_div_style">
           <img id="indexTabImg4" class="top_img" :src="indexTabImg4" />

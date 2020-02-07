@@ -1,5 +1,5 @@
 <template>
-  <div style="z-index: 1; position: absolute;top: 50px;">
+  <div style="z-index: 1; position: absolute;top: 70px;">
     <!--每日要闻start-->
     <div @click="godetile(65)" style="text-align: center;position: relative;">
       <img class="home_head_img" src="../../assets/img/headtop.png" />
