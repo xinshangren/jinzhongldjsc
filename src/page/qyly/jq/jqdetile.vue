@@ -89,7 +89,7 @@
         curpath: null,
         show: false,
         data: {},
-        images: [],
+        images: [''],
       };
     },
     mounted() {
@@ -145,14 +145,18 @@
           .then(res => {
             if (res.success == "1") {
               _this.data = res.data;
-              _this.images = res.images;
+              if(res.images!=null){
+                _this.images = res.images;
+                for (const key in _this.images) {
+                 if (_this.images.hasOwnProperty(key)) {
+                  _this.images[key] = httpMethod.returnBaseUrlFun() + _this.images[key];
+                 }
+              }
+              }
+                
+             
               if( res.videourl!=null){
                 _this.curpath = httpMethod.returnBaseUrlFun() + res.videourl;
-              }
-              for (const key in _this.images) {
-                if (_this.images.hasOwnProperty(key)) {
-                  _this.images[key] = httpMethod.returnBaseUrlFun() + _this.images[key];
-                }
               }
 
             }
