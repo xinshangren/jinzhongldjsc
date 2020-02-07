@@ -21,9 +21,9 @@
       <van-tab title="政务公开">
         <child3 style></child3>
       </van-tab>
-      <van-tab title="美丽晋城">
+      <!-- <van-tab title="美丽晋城">
         <child4 style></child4>
-      </van-tab>
+      </van-tab> -->
     </van-tabs>
   </div>
 </template>

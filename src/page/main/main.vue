@@ -22,13 +22,13 @@
       <div class="main_item" id="4" style="position: relative;width: 25%;">
         <img src="@/assets/img/tab_logo.png" style="height: 54px;" />
       </div>
-      <div class="main_item" id="2">
-        <img class="main_item_img" v-bind:src="tabImage[2]" />
-        <div class="main_item_noSelect">一键直连</div>
-      </div>
       <div class="main_item" id="3">
         <img class="main_item_img" v-bind:src="tabImage[3]" />
         <div class="main_item_noSelect">市长热线</div>
+      </div>
+       <div class="main_item" id="2">
+        <img class="main_item_img" v-bind:src="tabImage[2]" />
+        <div class="main_item_noSelect">一键直连</div>
       </div>
     </div>
   </div>
