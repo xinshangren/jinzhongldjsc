@@ -1,9 +1,5 @@
 <template>
-<<<<<<< HEAD
   <div style="z-index: 1; position: absolute;top: 70px;">
-=======
-  <div style="z-index: 1; position: absolute;top: 59px;">
->>>>>>> 041c7918146da4983ba14591cd22ed9c9d94d6a7
     <!--每日要闻start-->
     <div @click="godetile(65)" style="text-align: center;position: relative;">
       <img class="home_head_img" src="../../assets/img/headtop.png" />
@@ -41,7 +37,7 @@
     <!--常用应用end-->
 
     <!--重点工作仓start-->
-    <div style="width: 100%;background: #ffffff;margin-top: 5px;padding-bottom: 20px;">
+    <div style="width: 100%;background: #ffffff;margin-top: 5px;">
       <div style="text-align: center;position: relative;padding-top:0px;">
         <img style="width: 134px;" src="../../assets/img/head_bg2.png" />
         <div
