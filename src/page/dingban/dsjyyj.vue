@@ -1,5 +1,24 @@
 <template>
   <div>
+    <div
+      style="border:5px solid #F7F7F7; width:100%;vertical-align: middle;display: flex;margin:0px 0px -4px -4px;width:100%;background: #ffffff;"
+    >
+      <img
+        id="all_pick"
+        style="height: 20px;margin: 5px 0px 5px 12px;"
+        v-if="all_pick_flag"
+        src="../../assets/img/choice2.png"
+        @click="all_pick"
+      />
+      <img
+        id="all_pick"
+        style="height: 20px;margin: 5px 0px 5px 12px;"
+        v-else
+        src="../../assets/img/choice1.png"
+        @click="all_pick"
+      />
+      <div style="font-size: 14px;margin: 5px 0px 5px 12px;">全选</div>
+    </div>
     <van-list
       id="newslist1"
       v-model="loading"
@@ -8,10 +27,10 @@
       :offset="60"
       :error.sync="error"
       error-text="查询失败"
-      style="background: #F7F7F7;padding: 0 13px 13px 13px;overflow-y: auto;"
+      style="background: #F7F7F7;padding: 0 13px 13px 13px;overflow:auto;margin-bottom:56px;"
     >
       <div
-        style="margin-left: 32px;width: 90%;display: flex; position: relative; margin-top: 8px; border-radius:12px;border: 1px solid #EFEFEF; background: #ffffff;height: 87px;"
+        style="width:100%;display: flex; position: relative; margin-top: 4px; border-radius:12px;border: 1px solid #EFEFEF; background: #ffffff;height: 87px;"
         v-for="(item,index) of list"
         :key="item.id"
       >
@@ -22,13 +41,13 @@
           type="checkbox"
           :value="item.dingid"
           v-model="callPhoneList"
-          @change="addPhone"
+          v-on:change="addPhone($event)"
         />
         <label @click="errorMsg(item)" :for="'dsjyyjid'+index" class="active"></label>
-        <img :src="item.img" style="margin: 14px 14px 15px 22px;  width: 45px; height: 45px;" />
+        <img :src="item.img" style="margin: 16px 14px 15px 7px;  width: 55px; height: 55px;" />
         <div style="color: #333333;font-size: 15px;margin-top: 20px;">
           <div style="max-width:60px;">{{item.realname}}</div>
-          <div style="margin-top: 23px;margin-left: -53px;font-size: 13px;">{{item.dutyName}}</div>
+          <div style="margin-top: 16px;font-size: 13px;">{{item.dutyName}}</div>
         </div>
         <div style="display: flex; position: absolute; right: 10px;top: 20px;">
           <img
@@ -36,16 +55,16 @@
             style="width: 50px;height:50px;"
             @click="goDetile(item)"
           />
-          <img
+          <!-- <img
             src="../../assets/img/sms.png"
             style="width: 50px;height:50px;margin-left: 5px;"
             @click="goSms(item)"
-          />
+          />-->
           <!-- <img
             src="../../assets/img/ding.png"
             style="width: 50px;height:50px;margin-left: 5px;"
             @click="goDing(item)"
-          /> -->
+          />-->
         </div>
       </div>
     </van-list>
@@ -72,17 +91,70 @@ export default {
       corpId: "",
       callPhoneList: [],
       callButton: false,
-      map: {}
+      map: {},
+      all_pick_flag: false
     };
   },
   mounted() {
     var orderHight1 = document.documentElement.clientHeight;
-    var heightlist = orderHight1 - 175;
+    var heightlist = orderHight1 - 196;
     document.getElementById("newslist1").style.height = heightlist + "px";
     this.gojq();
   },
+  props: ["callPhoneList_p"],
   methods: {
-    addPhone: function() {
+    all_pick: function() {
+      var self = this;
+      if (self.all_pick_flag) {
+        self.all_pick_flag = false;
+
+        self.callPhoneList = [];
+        self.addPhone(null);
+      } else {
+        var list = self.list;
+        var list1 = [];
+        list.forEach(element => {
+          if (element.dingid != null) {
+            if (self.callPhoneList_p.indexOf(element.dingid) > -1) {
+            } else {
+              list1.push(element.dingid);
+            }
+          }
+        });
+        var ls = list1.length;
+        var ll = self.callPhoneList_p.length;
+        if (ll + ls > 35) {
+          this.$toast("多人通话选择人数不得大于35人");
+          return false;
+        } else {
+          self.all_pick_flag = true;
+          list.forEach(element => {
+            if (element.dingid != null) {
+              if (self.callPhoneList.indexOf(element.dingid) > -1) {
+              } else {
+                self.callPhoneList.push(element.dingid);
+              }
+            }
+          });
+          self.addPhone(null);
+        }
+      }
+    },
+    addPhone: function(e) {
+      var self = this;
+      if (e != null && e.target.checked) {
+        if (self.callPhoneList_p.length >= 35) {
+          console.log(self.callPhoneList);
+          e.target.checked = false;
+          self.callPhoneList.pop();
+          console.log(self.callPhoneList);
+          this.$toast("多人通话选择人数不得大于35人");
+          return false;
+        }
+      }
+      if (self.callPhoneList.length == 0) {
+        self.all_pick_flag = false;
+      }
       console.log("dsjyyj页面");
       this.map.callPhoneList = this.callPhoneList;
       this.map.flag = "dsjyyj";
@@ -132,12 +204,9 @@ export default {
     },
     gojq: function() {
       var currentUrl = window.location.href; //当前页面地址
-      if (window.location.hash == "#/") {
-        currentUrl = currentUrl.substring(
-          0,
-          currentUrl.indexOf(window.location.hash)
-        );
-      }
+      var number = currentUrl.indexOf("#");
+      currentUrl = currentUrl.substring(0, number);
+      console.log(currentUrl);
       var params = {
         currentUrl: currentUrl
       };

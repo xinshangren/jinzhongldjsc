@@ -10,12 +10,12 @@ import swszfVue from '@/page/dingban/swszf.vue'
 import szxVue from '@/page/dingban/szx.vue'
 import dsjyyjVue from '@/page/dingban/dsjyyj.vue'
 import qxqkfqVue from '@/page/dingban/qxqkfq.vue'
+import gqxwsjVue from '@/page/dingban/gqxwsj.vue'
 import srdVue from '@/page/dingban/srd.vue'
 import newsdetileVue from '@/page/toutiao/newsdetile.vue'
 import ldzcVue from '@/page/toutiao/ldzc.vue'
 import zwgkVue from '@/page/toutiao/zwgk.vue'
 import mainVue from '@/page/main/main.vue'
-// import mainVue from '@/page/main/main_new.vue'
 import hbgjVue from '@/page/zdgz/hbgj/hbgj.vue'
 import zdgcVue from '@/page/zdgz/zdgc/zdgc.vue'
 import zdgc_xmdealiVue from '@/page/zdgz/zdgc/zdgc_xmlb/zdgc_xmdeali/zdgc_xmdeali.vue'
@@ -250,6 +250,10 @@ export default new Router({
       path: '/main/qxtz_new',
       name: 'qxtz_new',
       component: qxtz_newVue
+    },{
+      path: '/dingban/gqxwsj',
+      name: 'gqxwsj',
+      component: gqxwsjVue
     }
   ]
 })
