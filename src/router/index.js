@@ -22,6 +22,7 @@ import zdgc_xmdealiVue from '@/page/zdgz/zdgc/zdgc_xmlb/zdgc_xmdeali/zdgc_xmdeal
 import zdgc_czwt_daliVue from '@/page/zdgz/zdgc/zdgc_czwt/zdgc_czwt_deali/zdgc_czwt_deali.vue'
 import qylyVue from '@/page/qyly/qyly.vue'
 import wmgcVue from '@/page/wmgc/wmgc.vue'
+import yqfkVue from '@/page/yqfk/yqfk.vue'
 import wmgcxjzsVue from '@/page/wmgc/wmgcxjzs.vue'
 import jqgkVue from '@/page/qyly/jq/jqgk.vue'
 import jqlistVue from '@/page/qyly/jq/jqlist.vue'
@@ -131,12 +132,20 @@ export default new Router({
       name: 'qyly',
       component: qylyVue,
       meta:{keepAlive:true}
-    }, {
+    }, 
+    {
       path: '/wmgc/wmgc',
       name: 'wmgc',
       component: wmgcVue,
       meta:{keepAlive:true}
-    }, {
+    },
+    {
+      path: '/yqfk/yqfk',
+      name: 'yqfk',
+      component: yqfkVue,
+      meta:{keepAlive:true}
+    },
+     {
       path: '/wmgc/wmgcxjzs',
       name: 'wmgcxjzs',
       component:wmgcxjzsVue,

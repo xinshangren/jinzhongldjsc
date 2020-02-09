@@ -911,9 +911,14 @@ export default {
           if (this.permissionList.indexOf("每日要情") > -1) {
             id = "65";
             name = "每日要情";
-            this.$router.push({
-              path: "/zdgz/mryq/mryq"
+            // this.$router.push({
+            //   path: "/zdgz/mryq/mryq"
+            // });
+
+             this.$router.push({
+              path: "/yqfk/yqfk"
             });
+
             this.$parent.removeEvent();
           } else {
             this.$toast("权限不足");
