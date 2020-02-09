@@ -365,7 +365,7 @@ export const httpMethod = {
     getCmsCcdtList: function (params) {
         return get("wmgcAppInsideController.action?getCmsCcdtList", params);
     },
-    
+
     //新能源概况图
     getXnyTjPhase: function (params) {
         return get("nytsAppGbInsideController.action?getXnyTjPhase", params);
@@ -423,10 +423,18 @@ export const httpMethod = {
     getGroupInfo: function (params) {
         return get("dingTalkController.action?getGroupInfo", params);
     },
-
-    
-
-
+    // 获取疫情人员列表
+    getEpidemicPersonnels: function (params) {
+        return get("eqEPCAppInsideContorller.action?getEpidemicPersonnels", params);
+    },
+    //获取疫情信息
+    getEpidemicData: function (params) {
+        return get("eqEPCAppInsideContorller.action?getEpidemicData", params);
+    },
+    //获取防控人员列表
+    getControlPersonnels: function (params) {
+        return get("eqEPCAppInsideContorller.action?getControlPersonnels", params);
+    },
 
 
 
