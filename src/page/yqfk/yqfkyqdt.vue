@@ -57,10 +57,14 @@
         </div>
         <div style="height: 32px;margin-top: 4px;background: #fafafa;">
           <div style="display: flex;color: #626262;">
-            <div style="text-align: center;width: 25%;font-size: 15px;margin-top: 5px;">{{tableList_sheng.provinceName}}</div>
-            <div style="text-align: center;width: 25%;font-size: 15px;margin-top: 5px;">{{tableList_sheng.confirmedCount}}</div>
-            <div style="text-align: center;width: 25%;font-size: 15px;margin-top: 5px;">{{tableList_sheng.deadCount}}</div>
-            <div style="text-align: center;width: 25%;font-size: 15px;margin-top: 5px;">{{tableList_sheng.curedCount}}</div>
+            <div style="text-align: center;width: 25%;font-size: 15px;margin-top: 5px;">{{tableList_sheng.provinceName}}
+            </div>
+            <div style="text-align: center;width: 25%;font-size: 15px;margin-top: 5px;">
+              {{tableList_sheng.confirmedCount}}</div>
+            <div style="text-align: center;width: 25%;font-size: 15px;margin-top: 5px;">{{tableList_sheng.deadCount}}
+            </div>
+            <div style="text-align: center;width: 25%;font-size: 15px;margin-top: 5px;">{{tableList_sheng.curedCount}}
+            </div>
           </div>
           <hr style="background: #e6e6e6;border:0;height:1px;" />
         </div>
@@ -73,7 +77,7 @@
           </div>
           <hr style="background: #e6e6e6;border:0;height:1px;" />
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -89,9 +93,6 @@
   import global_variable from '../../api/global_variable.js';
   import { yqfkyqdtJs } from './yqfkyqdt.js';
   import echarts from "echarts";
-  import Qs from 'qs'
-  import axios from 'axios'
-Vue.prototype.$http = axios
   Vue.use(PullRefresh);
   export default {
     name: "picsnews",
@@ -115,8 +116,8 @@ Vue.prototype.$http = axios
           "curechange": 0,
           "cure": 0
         },
-        tableList_sheng:{},
-        tableList_shi:[],
+        tableList_sheng: {},
+        tableList_shi: [],
       };
     },
     mounted() {
@@ -193,29 +194,27 @@ Vue.prototype.$http = axios
               self.eqtj = res.data;
               self.getOneEchars(echarts, myCharts1, res.eqMap);
               self.getTwoEchars(echarts, myCharts2, res.rateData);
-              self.getTableData();
             }
           })
       },
-      getTableData:function() {
+      getTableData: function () {
         var self = this;
-        axios.get('https://m.look.360.cn/events/feiyan?sv=&version=&market=&device=2&net=4&stype=&scene=&sub_scene=&refer_scene=&refer_subscene=&f=jsonp&location=true&_=1581157051846&callback=jsonp1').then(function(result) {
-            // result是所有的返回回来的数据
-            // 包括了响应报文行
-            // 响应报文头
-            // 响应报文体
-            var res = JSON.parse(result.substring(7,result.length-2));
-            console.log(res);
-            var data = res.data
-            data.forEach(element => {
-              if(element.city == '山西省'){
-                self.tableList_sheng = element.data;
-                self.tableList_shi = element.cities;
-              }
-            });
+        httpMethod
+          .getEqDetail()
+          .then(res => {
+            var code = res.success;
+            if (code == "1") {
+              var data = JSON.parse(res.data).data;
+              data.forEach(element => {
+                if (element.city == '山西省') {
+                  self.tableList_sheng = element.data;
+                  self.tableList_shi = element.cities;
+                }
+              });
+            }
             console.log(self.tableList_sheng);
             console.log(self.tableList_shi);
-        });
+          });
       },
       //初始化第一个图表
       getOneEchars: function (echarts, value, data) {

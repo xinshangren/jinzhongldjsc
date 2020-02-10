@@ -435,6 +435,11 @@ export const httpMethod = {
     getControlPersonnels: function (params) {
         return get("eqEPCAppInsideContorller.action?getControlPersonnels", params);
     },
+    //获取防控人员列表
+    getEqDetail: function (params) {
+        return get("eqEPCAppInsideContorller.action?getEqDetail", params);
+    },
+    
 
 
 
