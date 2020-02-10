@@ -124,7 +124,7 @@ Vue.prototype.$http = axios
       var heightlist = orderHight1 - 160;
       $("#yqdt").css("height", heightlist + "px");
       this.getData();
-
+      this.getTableData();
     },
     methods: {
       getPictureclass: function () {
