@@ -204,7 +204,8 @@ Vue.prototype.$http = axios
             // 包括了响应报文行
             // 响应报文头
             // 响应报文体
-            var res = JSON.parse(result.substring(7,result.length-2))
+            var res = JSON.parse(result.substring(7,result.length-2));
+            console.log(res);
             var data = res.data
             data.forEach(element => {
               if(element.city == '山西省'){
