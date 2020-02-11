@@ -143,7 +143,6 @@ export default new Router({
       path: '/yqfk/yqfk',
       name: 'yqfk',
       component: yqfkVue,
-      meta:{keepAlive:true}
     },
      {
       path: '/wmgc/wmgcxjzs',

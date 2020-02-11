@@ -81,7 +81,7 @@ export default {
   props: ["callPhoneList_p"],
   data() {
     return {
-      userId: "8ae4804f6d39da6a016d4c928ede0119", //暂时默认
+      userId: "2c9090bc702cfbb701702d0336730001", //暂时默认
       error: false,
       list: [],
       loading: false, //是否处于加载状态
@@ -163,7 +163,7 @@ export default {
     },
     getUserOrDepart: function() {
       var params = {
-        departId: "8a8180c9701a1a4b01701ef148c60034"
+        departId: "2c9090bc702cfbb701702d0336730001"
       };
       httpMethod
         .getUserOrDepart(params)

@@ -1,6 +1,8 @@
 export const hbgjAirJs = {
     //展示第一个轮播图
     showLbEcharsOne: function (echarts, value, data) {
+         //晋中0209
+         var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市','祁县','榆社县'];
         const myCharts = echarts.init(value, "macarons");
         var nameList = [];
         var data1List = [];
@@ -23,7 +25,7 @@ export const hbgjAirJs = {
 
         var option = {
             legend: {
-                data: ["城区", "沁水县", "泽州县", "阳城县", "陵川县", "高平市"],
+                data:jinzhong,
                 itemHeight: 7,
                 itemWidth: 15
             },
@@ -49,10 +51,10 @@ export const hbgjAirJs = {
             },
             yAxis: {
                 type: 'category',
-                data: nameList,
+                data: jinzhong,
             },
             series: [{
-                name: '城区',
+                name: jinzhong[0],
                 type: 'bar',
                 stack: '总量',
                 color: '#2E944B',
@@ -85,7 +87,7 @@ export const hbgjAirJs = {
                 }
             },
             {
-                name: '沁水县',
+                name: jinzhong[1],
                 type: 'bar',
                 stack: '总量',
                 color: '#CDEE33',
@@ -118,7 +120,7 @@ export const hbgjAirJs = {
                 }
             },
             {
-                name: '阳城县',
+                name: jinzhong[2],
                 type: 'bar',
                 stack: '总量',
                 color: '#37E388',
@@ -151,7 +153,7 @@ export const hbgjAirJs = {
                 }
             },
             {
-                name: '陵川县',
+                name: jinzhong[3],
                 type: 'bar',
                 stack: '总量',
                 color: '#4E75F4',
@@ -183,7 +185,7 @@ export const hbgjAirJs = {
                     }
                 }
             }, {
-                name: '泽州县',
+                name: jinzhong[4],
                 type: 'bar',
                 stack: '总量',
                 color: '#8260F2',
@@ -215,7 +217,7 @@ export const hbgjAirJs = {
                     }
                 }
             }, {
-                name: '高平市',
+                name: jinzhong[5],
                 type: 'bar',
                 stack: '总量',
                 color: '#EB8941',

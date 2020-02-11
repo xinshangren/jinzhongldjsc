@@ -105,6 +105,8 @@ export const echarsEnti = {
     myCharts.setOption(option);
   },
   createEcharsTwo: function (echarts, value, data1) {
+     //晋中0209
+    var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市'];
     const myCharts = echarts.init(value, "macarons");
     var nameList = [];
     var data1List = [];
@@ -144,7 +146,7 @@ export const echarsEnti = {
       },
       yAxis: {
         type: 'category',
-        data: nameList,
+        data: jinzhong,
         axisLabel: {
           show: true,
           textStyle: {
@@ -257,21 +259,26 @@ export const echarsEnti = {
     myCharts.setOption(option);
   },
   createEcharsThree: function (echarts, value, data1) {
+     //晋中0209
+    var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市','祁县','榆社县'];
+    
     const myCharts = echarts.init(value, "macarons");
     var total = 0;
     var data1List = [];
     var nameList = [];
+    var is=0;
     for (var Key in data1) {
       var data1value = data1[Key];
       nameList.push(Key);
       var map = {
         value: data1value,
-        name: Key
+        name: jinzhong[is++]
       }
       var va = parseFloat(data1value);
       total += va;
       data1List.push(map);
     }
+   
 
     var totalstr = total.toFixed(1) + '亿';
     let option = {
@@ -312,7 +319,7 @@ export const echarsEnti = {
         itemHeight: 7,
         height: 10,
         itemGap: 4,
-        data: nameList,
+        data: jinzhong,
         formatter: function (name) {
           let target;
           for (let i = 0; i < data1List.length; i++) {
@@ -388,6 +395,9 @@ export const echarsEnti = {
     myCharts.setOption(option);
   },
   createEcharsFour: function (echarts, value, data1) {
+      //晋中0209
+    var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市'];
+    
     const myCharts = echarts.init(value, "macarons");
     var myColor = ['#ff9966', '#ffcc66', '#99ff5c', '#32f7a6', '#6699ff', '#ff5cfd'];
     var nameList = [];
@@ -443,7 +453,7 @@ export const echarsEnti = {
       },
       yAxis: {
         type: 'category',
-        data: nameList,
+        data: jinzhong,
         axisLabel: {
           textStyle: {
             color: '#616161'

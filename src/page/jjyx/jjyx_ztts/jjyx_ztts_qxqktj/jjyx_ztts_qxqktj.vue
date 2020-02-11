@@ -59,7 +59,7 @@
             v-for="(item,index) in sczj_dataList"
             :key="index"
           >
-            <div class="ui-col ui-col" style="text-align: center;">{{item.name}}</div>
+            <div class="ui-col ui-col" style="text-align: center;">{{jinzhong[index]}}</div>
             <div class="ui-col ui-col" style="text-align: center;">{{item.indexdata}}</div>
             <div class="ui-col ui-col" style="text-align: center;display: flex;">
               <div style="color: red;text-align: right; width: 100%;">{{item.yonydata}}%</div>
@@ -98,7 +98,7 @@
             v-for="(item,index) in lsze_dataList"
             :key="index"
           >
-            <div class="ui-col ui-col" style="text-align: center;">{{item.name}}</div>
+            <div class="ui-col ui-col" style="text-align: center;">{{jinzhong[index]}}</div>
             <div class="ui-col ui-col" style="text-align: center;">{{item.indexdata}}</div>
             <div class="ui-col ui-col" style="text-align: center;display: flex;">
               <div style="color: red;text-align: right; width: 100%;">{{item.yonydata}}%</div>
@@ -136,7 +136,7 @@
             v-for="(item,index) in zjsd_dataList"
             :key="index"
           >
-            <div class="ui-col ui-col" style="text-align: center;">{{item.name}}</div>
+            <div class="ui-col ui-col" style="text-align: center;">{{jinzhong[index]}}</div>
             <div class="ui-col ui-col" style="text-align: center;display: flex;">
               <div style="color: red;text-align: right; width: 100%;">{{item.indexdata}}%</div>
               <img
@@ -164,37 +164,37 @@
           <div style="width: 93%;margin: auto;margin-top: 12px;">
             <div style="float: left;width: 33%;text-align: center;">
             <img  src="../../../../assets/img/map1.png" style="width:70px;"/>
-            <p>城区</p>
+            <p>{{jinzhong[0]}}</p>
             <p><span style="color: #0b91ed;">{{gdzc_mapData.cq}}</span>万元</p>
             </div>
 
             <div style="float: left;width: 33%;text-align: center; ">
             <img  src="../../../../assets/img/map2.png" style="width:70px;"/>
-            <p>泽州县</p>
+            <p>{{jinzhong[1]}}</p>
             <p><span style="color: #0b91ed;">{{gdzc_mapData.zzx}}</span>万元</p>
             </div>
 
             <div style="float: left;width: 33%;text-align: center;">
             <img  src="../../../../assets/img/map3.png" style="width:70px;"/>
-            <p>高平市</p>
+            <p>{{jinzhong[2]}}</p>
             <p><span style="color: #0b91ed;">{{gdzc_mapData.gps}}</span>万元</p>
             </div>
          
             <div style="float: left;width: 33%;text-align: center;padding-top: 8px;">
             <img  src="../../../../assets/img/map4.png" style="width:70px;"/>
-            <p>阳城县</p>
+            <p>{{jinzhong[3]}}</p>
             <p><span style="color: #0b91ed;">{{gdzc_mapData.ycx}}</span>万元</p>
             </div>
 
             <div style="float: left;width: 33%;text-align: center;padding-top: 8px; ">
             <img  src="../../../../assets/img/map5.png" style="width:70px;"/>
-            <p>沁水县</p>
+            <p>{{jinzhong[4]}}</p>
             <p><span style="color: #0b91ed;">{{gdzc_mapData.qsx}}</span>万元</p>
             </div>
 
             <div style="float: left;width: 33%;text-align: center;padding-top: 8px;">
             <img  src="../../../../assets/img/map6.png" style="width:70px;"/>
-            <p>陵川县</p>
+            <p>{{jinzhong[5]}}</p>
             <p><span style="color: #0b91ed;">{{gdzc_mapData.lcx}}</span>万元</p>
             </div> 
           </div>
@@ -227,7 +227,7 @@
         <div style="width: 93%;margin: auto;margin-top: 12px;">
           <div style="float: left;width: 33%;text-align: center;">
           <img  src="../../../../assets/img/map1.png" style="width:70px;"/>
-          <p>城区</p>
+          <p>{{jinzhong[0]}}</p>
           <p><span style="color: #0b91ed;">{{ggyszs_dataList.cq}}%</span>
             <img
               v-if="ggyszs_dataList.cq>=0"
@@ -244,7 +244,7 @@
 
           <div style="float: left;width: 33%;text-align: center; ">
           <img  src="../../../../assets/img/map2.png" style="width:70px;"/>
-          <p>泽州县</p>
+          <p>{{jinzhong[1]}}</p>
           <p><span style="color: #0b91ed;">{{ggyszs_dataList.zzx}}%</span><img
             v-if="ggyszs_dataList.zzx>=0"
             style="height: 15px;"
@@ -259,7 +259,7 @@
 
           <div style="float: left;width: 33%;text-align: center;">
           <img  src="../../../../assets/img/map3.png" style="width:70px;"/>
-          <p>高平市</p>
+          <p>{{jinzhong[2]}}</p>
           <p><span style="color: #0b91ed;">{{ggyszs_dataList.gps}}%</span><img
             v-if="ggyszs_dataList.gps>=0"
             style="height: 15px;"
@@ -274,7 +274,7 @@
        
           <div style="float: left;width: 33%;text-align: center;padding-top: 8px;">
           <img  src="../../../../assets/img/map4.png" style="width:70px;"/>
-          <p>阳城县</p>
+          <p>{{jinzhong[3]}}</p>
           <p><span style="color: #0b91ed;">{{ggyszs_dataList.ycx}}%</span><img
             v-if="ggyszs_dataList.ycx>=0"
             style="height: 15px;"
@@ -289,7 +289,7 @@
 
           <div style="float: left;width: 33%;text-align: center;padding-top: 8px; ">
           <img  src="../../../../assets/img/map5.png" style="width:70px;"/>
-          <p>沁水县</p>
+          <p>{{jinzhong[4]}}</p>
           <p><span style="color: #0b91ed;">{{ggyszs_dataList.qsx}}%</span><img
             v-if="ggyszs_dataList.qsx>=0"
             style="height: 15px;"
@@ -304,7 +304,7 @@
 
           <div style="float: left;width: 33%;text-align: center;padding-top: 8px;">
           <img  src="../../../../assets/img/map6.png" style="width:70px;"/>
-          <p>陵川县</p>
+          <p>{{jinzhong[5]}}</p>
           <p><span style="color: #0b91ed;">{{ggyszs_dataList.lcx}}%</span><img
             v-if="ggyszs_dataList.lcx>=0"
             style="height: 15px;"
@@ -344,7 +344,7 @@
             v-for="(item,index) in jmrj_dataList"
             :key="index"
           >
-            <div class="ui-col ui-col" style="text-align: center;">{{item.name}}</div>
+            <div class="ui-col ui-col" style="text-align: center;">{{jinzhong[index]}}</div>
             <div class="ui-col ui-col" style="text-align: center;">{{item.indexdata}}</div>
             <div class="ui-col ui-col" style="text-align: center;display: flex;">
               <div style="color: red;text-align: right; width: 100%;">{{item.yonydata}}%</div>
@@ -382,7 +382,7 @@
             v-for="(item,index) in czrj_dataList"
             :key="index"
           >
-            <div class="ui-col ui-col" style="text-align: center;">{{item.name}}</div>
+            <div class="ui-col ui-col" style="text-align: center;">{{jinzhong[index]}}</div>
             <div class="ui-col ui-col" style="text-align: center;">{{item.indexdata}}</div>
             <div class="ui-col ui-col" style="text-align: center;display: flex;">
               <div style="color: red;text-align: right; width: 100%;">{{item.yonydata}}%</div>
@@ -421,7 +421,7 @@
             v-for="(item,index) in ncrj_dataList"
             :key="index"
           >
-            <div class="ui-col ui-col" style="text-align: center;">{{item.name}}</div>
+            <div class="ui-col ui-col" style="text-align: center;">{{jinzhong[index]}}</div>
             <div class="ui-col ui-col" style="text-align: center;">{{item.indexdata}}</div>
             <div class="ui-col ui-col" style="text-align: center;display: flex;">
               <div style="color: red;text-align: right; width: 100%;">{{item.yonydata}}%</div>
@@ -453,6 +453,8 @@ export default {
   name: "jjyx_ztts_qxqktj",
   data() {
     return {
+       //晋中0209
+      jinzhong:['榆次区','太谷区','寿阳县','平遥县','左权县','介休市','祁县','榆社县'],
       show: false,
       qssczzEnti: {},
       totalData: {},

@@ -1,15 +1,17 @@
 export const hbgjAirJs = {
     //展示第一个轮播图
     showLbEcharsOne: function (echarts, value, data) {
+         //晋中0209
+         var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市','祁县','榆社县'];
         const myCharts = echarts.init(value, "macarons");
         var datalist = [];
         var nameList = [];
         for (var i = 0; i < data.length; i++) {
             var map = {
-                name: data[i].typename,
+                name: jinzhong[i],
                 value: data[i].num
             }
-            nameList.push(data[i].typename);
+            nameList.push(jinzhong[i]);
             datalist.push(map);
         }
 

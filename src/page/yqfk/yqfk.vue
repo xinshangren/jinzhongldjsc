@@ -16,10 +16,10 @@
         <child1 v-bind:active="active"></child1>
       </van-tab>
       <van-tab title="疫情地图">
-        <child2 style></child2>
+        <child2></child2>
       </van-tab>
       <van-tab title="指挥调度">
-        <child3 style></child3>
+        <child3></child3>
       </van-tab>
     </van-tabs>
   </div>

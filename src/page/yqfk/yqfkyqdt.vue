@@ -1,6 +1,6 @@
 <template>
 
-  <div style="margin:10px;background: #ffffff;border-radius:5px">
+  <div id='yqdtid' style="margin:10px;background: #ffffff;border-radius:5px;overflow-y: scroll;overflow-x: hidden;">
     <div style="padding:17px;">
       <div style="font-size: 20px;font-weight: 700;">疫情统计</div>
       <!-- <div style="font-size: 13px;margin-top: 1px;color: #999999;">统计截止2020.2.8 20:55</div> -->
@@ -122,8 +122,8 @@
     },
     mounted() {
       var orderHight1 = document.documentElement.clientHeight;
-      var heightlist = orderHight1 - 160;
-      $("#yqdt").css("height", heightlist + "px");
+      var heightlist = orderHight1 - 170;
+      $("#yqdtid").css("height", heightlist + "px");
       this.getData();
       this.getTableData();
     },

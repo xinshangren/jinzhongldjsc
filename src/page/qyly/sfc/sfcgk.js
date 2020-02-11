@@ -7,8 +7,11 @@ export const echarsEnti = {
     var names = [];
     var values = [];
     var dataList = [];
+     //晋中0209
+    var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市'];
     for (var i = 0; i < dataEntity.length; i++) {
-      names.push(dataEntity[i].counties);
+      names.push(jinzhong[i]);
+      // names.push(dataEntity[i].counties);
       values.push(dataEntity[i].num);
       total = total + dataEntity[i].num;
       var data = {
@@ -17,6 +20,7 @@ export const echarsEnti = {
       }
       dataList.push(data);
     }
+   
     // console.log(total);
     let option = {
       title: {

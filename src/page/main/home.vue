@@ -36,6 +36,14 @@
     </div>
     <!--常用应用end-->
 
+
+ <!--疫情防控start-->
+    <div @click="godetile(66)" style="text-align: center;position: relative;">
+      <img class="home_yqfk_img" src="../../assets/img/yqfk.png" />
+      <div class="home_head_time_style" style="font-size:14px;"></div>
+    </div>
+ <!--疫情防控over-->
+
     <!--重点工作仓start-->
     <div style="width: 100%;background: #ffffff;margin-top: 5px;">
       <div style="text-align: center;position: relative;padding-top:0px;">
@@ -911,11 +919,20 @@ export default {
           if (this.permissionList.indexOf("每日要情") > -1) {
             id = "65";
             name = "每日要情";
-            // this.$router.push({
-            //   path: "/zdgz/mryq/mryq"
-            // });
-
-             this.$router.push({
+            this.$router.push({
+              path: "/zdgz/mryq/mryq"
+            });
+            this.$parent.removeEvent();
+          } else {
+            this.$toast("权限不足");
+            isUploadLog = false;
+          }
+          break;
+        case 66:
+          if (this.permissionList.indexOf("每日要情") > -1) {
+            id = "66";
+            name = "疫情防控";
+            this.$router.push({
               path: "/yqfk/yqfk"
             });
 

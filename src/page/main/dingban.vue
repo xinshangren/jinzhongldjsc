@@ -20,6 +20,9 @@
       <van-tab title="政协领导" id="8a8180c9700ff44e017010166e88000d">
         <child4 style v-on:addPhone="addPhone" :callPhoneList_p="callPhoneList"></child4>
       </van-tab>
+      <van-tab title="工作推进组" id="2c9090bc702cfbb701702d0336730001">
+        <child8 style v-on:addPhone="addPhone" :callPhoneList_p="callPhoneList"></child8>
+      </van-tab>
       <!-- <van-tab title="各区县委" id="8a8180c9701a1a4b01701ef148c60034">
         <child8 style v-on:addPhone="addPhone" :callPhoneList_p="callPhoneList"></child8>
       </van-tab>

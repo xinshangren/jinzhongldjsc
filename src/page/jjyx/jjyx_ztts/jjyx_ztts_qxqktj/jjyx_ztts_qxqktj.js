@@ -15,13 +15,15 @@ export const echarsEnti = {
     return temp;
   },
   showjmrjsrEchars1: function (echarts, value,list) {
+	   //晋中0209
+	   var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市','祁县','榆社县'];
 	const myCharts = echarts.init(value);
 	myCharts.clear();
 	var dataShadow = [];
 	var dataAxis = [];
 	var dataAP = [];
 	for(let i = 0; i < list.length; i++) {
-		var name = list[i].name;
+		var name = jinzhong[i];
 		var indexdata = list[i].indexdata;
 		var yonydata = list[i].yonydata;
 		dataAxis.push(name);
@@ -184,12 +186,14 @@ export const echarsEnti = {
 		myCharts.setOption(option);
 	},
   showjmrjsrEchars2: function (echarts, value, list) {
+	 //晋中0209
+	var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市','祁县','榆社县'];
     const myCharts = echarts.init(value);
     var xLabel = [];
 	var maxValueList = [];
 	var valueList = [];
 	for(let i = 0; i < list.length; i++) {
-		var statisname = list[i].name;
+		var statisname = jinzhong[i];
 		var indexdata = parseFloat((list[i].indexdata) / 10000).toFixed(2);
 		var yonydata = list[i].yonydata;
 		valueList.push(indexdata);

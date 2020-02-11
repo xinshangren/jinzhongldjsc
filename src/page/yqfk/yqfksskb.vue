@@ -1,7 +1,7 @@
 <template>
 
   <div>
-     <iframe id="sskb" style="margin-top:-35px; width:100%;" src="https://m.carelink.cn/activity/epidemic/ssbb_jd.html?ad_od=share&utm_source=androidapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=Wxfriends&from=singlemessage&isappinstalled=0" scrolling="auto" frameborder="0"></iframe>
+     <iframe id="sskb" style="width:100%;" src="https://m.carelink.cn/activity/epidemic/ssbb_jd.html?ad_od=share&utm_source=androidapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=Wxfriends&from=singlemessage&isappinstalled=0" scrolling="auto" frameborder="0"></iframe>
 
   </div>
 

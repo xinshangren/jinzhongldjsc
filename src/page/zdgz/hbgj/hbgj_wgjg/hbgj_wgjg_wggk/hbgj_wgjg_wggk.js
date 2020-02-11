@@ -1,14 +1,16 @@
 export const hbgjAirJs = {
     //展示第一个轮播图
     showLbEcharsOne: function (echarts, value, lnum, pnum, dataList, counlist) {
+        //晋中0209
+        var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市','祁县','榆社县'];
         const myCharts = echarts.init(value, "macarons");
         var data2List = [];
         var nameList = [];
 
         for (var i = 0; i < counlist.length; i++) {
-            nameList.push(counlist[i].name);
+            nameList.push(jinzhong[i]);
             var map = {
-                name: counlist[i].name,
+                name: jinzhong[i],
                 value: counlist[i].num
             }
             data2List.push(map);
@@ -148,6 +150,8 @@ export const hbgjAirJs = {
         myCharts.setOption(option);
     },
     showLbEcharsThree: function (echarts, value,list) {
+        //晋中0209
+        var jinzhong=['榆次区','太谷区','寿阳县','平遥县','左权县','介休市','祁县','榆社县'];
         const myCharts = echarts.init(value, "macarons");
 
         var provideNumber; //x轴一行显示几个字；
@@ -163,7 +167,7 @@ export const hbgjAirJs = {
 			var endnum = list[i].endnum; //完结数
 			var endrate = list[i].rate; //完结率
 			var recordnum = list[i].recordnum; //巡查量
-			var time = list[i].name;
+			var time = jinzhong[i];
 
 			timeList.push(time);
 			value1.push(parseFloat(problemnum));
