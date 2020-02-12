@@ -2,7 +2,7 @@
   <div id="app">
     <loading v-show="LOADING" style="z-index:3;"></loading>
     <!--搜索框部分start-->
-    <div style="z-index: 2; height: 64px;background: #3098fb;position: fixed;top: 0px;width: 100%;">
+    <div v-show="headsearch" style="z-index: 2; height: 64px;background: #3098fb;position: fixed;top: 0px;width: 100%;">
       <div style="display: flex;">
         <div  id="appVueleftId" style="width:68%;">
         <van-search
@@ -56,7 +56,7 @@
           </div>
         </div>
       </div>
-      <div
+      <div v-show="headcontent"
         class="index_gonggao_style"
         style="display:flex;background: #3098fb;height: 47px;	line-height:47px;border-top:1px solid #ffffff;"
       >
@@ -68,9 +68,9 @@
     <!--搜索框部分end-->
     <!-- <router-view></router-view> -->
     <keep-alive>
-      <router-view style="margin-top: 111px;" class="index_main_view" v-if="$route.meta.keepAlive"></router-view>
+      <router-view :style="{marginTop:marigntop+'px'}" class="index_main_view" v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
-    <router-view style="margin-top: 111px;" v-if="!$route.meta.keepAlive"></router-view>
+    <router-view :style="{marginTop:marigntop+'px'}" v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
 
@@ -86,7 +86,10 @@ export default {
   },
   data() {
     return {
-      seach_value: ""
+      seach_value: "",
+      headsearch:true,
+      headcontent:true,
+      marigntop:111
     };
   },
   mounted() {

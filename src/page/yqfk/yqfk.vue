@@ -38,6 +38,11 @@ export default {
     };
   },
   mounted() {
+    //隐藏头
+    this.$parent.headsearch=false;
+    this.$parent.headcontent=false;
+    this.$parent.marigntop=0;
+
     this.$parent.isDeali = false;
     this.doAddAppLogList(
       global_variable.logId,
@@ -119,6 +124,12 @@ export default {
         });
     }
   },
+  destroyed(){
+    //隐藏头
+    this.$parent.headsearch=true;
+    this.$parent.headcontent=true;
+    this.$parent.marigntop=111;
+  },
   components: {
     child1,
     child2,
@@ -128,4 +139,12 @@ export default {
 </script>
 
 <style socped >
+.closebtn{
+  position: fixed;
+  top:0px;
+  right: 0px;
+  width: 75px;
+  border:0px;
+  font-size: 12px
+}
 </style>

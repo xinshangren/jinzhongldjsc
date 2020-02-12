@@ -138,7 +138,7 @@
       var _this = this;
       // 设置地图高度
       var orderHight1 = document.documentElement.clientHeight;
-      var heightlist = orderHight1 - 160;
+      var heightlist = orderHight1-45;
       $("#mapid").css("height", heightlist + "px");
 
       $("#grfh div").click(function () {

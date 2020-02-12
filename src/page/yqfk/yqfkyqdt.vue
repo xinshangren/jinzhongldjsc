@@ -122,7 +122,7 @@
     },
     mounted() {
       var orderHight1 = document.documentElement.clientHeight;
-      var heightlist = orderHight1 - 170;
+      var heightlist = orderHight1-60;
       $("#yqdtid").css("height", heightlist + "px");
       this.getData();
       this.getTableData();

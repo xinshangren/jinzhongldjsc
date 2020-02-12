@@ -28,7 +28,7 @@
     },
     mounted() {
      var orderHight1 = document.documentElement.clientHeight;
-    var heightlist = orderHight1 - 160;
+    var heightlist = orderHight1;
     $("#sskb").css("height", heightlist + "px");
     },
     methods: {
