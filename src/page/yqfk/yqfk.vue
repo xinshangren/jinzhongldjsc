@@ -34,7 +34,9 @@ export default {
   name: "headline",
   data() {
     return {
-      active: 0
+      active: 0,
+      grrydata:null,
+      fkrydata:null
     };
   },
   mounted() {

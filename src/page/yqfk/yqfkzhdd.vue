@@ -70,6 +70,11 @@
       :features="features">
       <el-amap-marker v-for="(marker, index) in markers" :key="index" :position="marker.position"
         :template="marker.template" :vid="index" :content="marker.content" :events="marker.events"></el-amap-marker>
+        <el-amap-circle v-for="(circle,index) in circles" :key="index" 
+        :center="circle.center" :radius="circle.radius" :fill-opacity="circle.fillOpacity" 
+        :fill-color="circle.fillColor" :stroke-weight="circle.strokeWeight" :stroke-color="circle.strokeColor"
+        ></el-amap-circle>
+    
     </el-amap>
   </div>
 </template>
@@ -131,7 +136,9 @@
         defaultLayer: null,
         map: null,
         markers: [],
-        tableList_shi:[]
+        tableList_shi:[],
+        mcircle:null,
+        circles:[]         
       };
     },
     mounted() {
@@ -266,6 +273,9 @@
       //
       getEpidemicPersonnels: function () {
         var _this = this;
+        if(_this.$parent.grrydata){
+            _this.drawGRRPoints(_this.$parent.grrydata);
+        }else{
         var params = {
         };
         httpMethod
@@ -273,7 +283,16 @@
           .then(res => {
             console.log(res);
             if (res.success == "1") {
-              let markers = [];
+              _this.$parent.grrydata = res;
+              _this.drawGRRPoints(res);
+            }
+          })
+          .catch(err => { });
+        }
+      },
+      drawGRRPoints:function(res){
+              var _this = this;
+              var markers = [];
               var path1 = require("../../assets/img/grnosel.png");
               for (let i = 0; i < res.data.length; i++) {
                 if (
@@ -313,7 +332,7 @@
               //     "' style='height:30px'></div>",
               // };
               // markers.push(centerpo);
-              _this.markers = markers;
+              // _this.markers = markers;
               // //添加范围圈
               // if (_this.map == null) {
               //   _this.map = amapManager.getMap();
@@ -383,16 +402,27 @@
                     if (_this.map == null) {
                       _this.map = amapManager.getMap();
                     }
-                    var mcircle = new AMap.Circle({
-                      center: _this.center,
-                      radius: 2000,
-                      fillColor: "#17c5e4 ",
-                      strokeWeight: 1,
-                      strokeColor: "white",
-                      fillOpacity: 0.4
-                    });
-                    _this.map.add(mcircle);
+                    // _this.map.remove(_this.map.getAllOverlays('polygon'));
+                    // _this.map.clearMap();
+                    // var mcircle = new AMap.Circle({
+                    //   center: _this.center,
+                    //   radius: 2000,
+                    //   fillColor: "#17c5e4 ",
+                    //   strokeWeight: 1,
+                    //   strokeColor: "white",
+                    //   fillOpacity: 0.4
+                    // });
+                    // _this.map.add(mcircle);
                     // _this.map.setFitView();
+                      var circle = {
+                        center: _this.center,
+                        radius: 2000,
+                        fillColor: "#17c5e4 ",
+                        strokeWeight: 1,
+                        strokeColor: "white",
+                        fillOpacity: 0.4
+                      }
+                    _this.circles=[circle]; 
                     _this.markers = markers;
                     $('#centeridv').css('display', '');
 
@@ -401,17 +431,13 @@
                     console.log(JSON.stringify(err1));
                   }
                 });
-
-
-
               });
-            }
-          })
-          .catch(err => { });
       },
-
       getControlPersonnels: function () {
         var _this = this;
+        if(_this.$parent.fkrydata){
+            _this.drawFKRPoints(_this.$parent.fkrydata);
+        }else{
         var params = {
         };
         httpMethod
@@ -419,7 +445,21 @@
           .then(res => {
             console.log(res);
             if (res.success == "1") {
-              let markers = [];
+              _this.$parent.fkrydata = res;
+              _this.drawFKRPoints(res);
+            }
+          })
+          .catch(err => { });
+        }
+      },
+      drawFKRPoints:function(res){
+              var _this = this;
+              if (_this.map == null) {
+                  _this.map = amapManager.getMap();
+                }
+                _this.circles=[];
+              // _this.map.clearMap();
+              var markers = [];
               var path1 = require("../../assets/img/fhnosel.png");
               for (let i = 0; i < res.data.length; i++) {
                 if (
@@ -447,12 +487,7 @@
                   });
               }
               _this.markers = markers;
-
-            }
-          })
-          .catch(err => { });
       },
-
       setMapFeatures() {
         if (this.map == null) {
           this.map = amapManager.getMap();
