@@ -36,7 +36,8 @@ export default {
     return {
       active: 0,
       grrydata:null,
-      fkrydata:null
+      fkrydata:null,
+      localmarker:null
     };
   },
   mounted() {

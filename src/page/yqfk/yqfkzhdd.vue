@@ -378,7 +378,7 @@
                 //     // alert("dd定位 error: " + JSON.stringify(err));
                 //   }
                 // });
-
+                if(!_this.$parent.localmarker)
                 dd.biz.map.locate({
                   onSuccess: function (result1) {
                     console.log(JSON.stringify(result1));
@@ -391,13 +391,14 @@
                     }
                     _this.center = [result1.longitude, result1.latitude];
                     var path = require("../../assets/img/icon-po.png");
-                    markers.push({
+                    _this.$parent.localmarker = {
                       position: [result1.longitude, result1.latitude],
                       template:
                         "<div  style='height:30px;margin-top:15px;margin-left:-5px;'><img src='" +
                         path +
                         "' style='height:30px'></div>"
-                    });
+                    }
+                    markers.push(_this.$parent.localmarker);
 
                     if (_this.map == null) {
                       _this.map = amapManager.getMap();
@@ -431,6 +432,10 @@
                     console.log(JSON.stringify(err1));
                   }
                 });
+                else{
+                  markers.push(_this.$parent.localmarker);
+                  _this.markers = markers;
+                }
               });
       },
       getControlPersonnels: function () {
@@ -457,7 +462,7 @@
               if (_this.map == null) {
                   _this.map = amapManager.getMap();
                 }
-                _this.circles=[];
+                // _this.circles=[];
               // _this.map.clearMap();
               var markers = [];
               var path1 = require("../../assets/img/fhnosel.png");
@@ -486,6 +491,8 @@
                     }
                   });
               }
+              if(_this.$parent.localmarker)
+              markers.push(_this.$parent.localmarker);
               _this.markers = markers;
       },
       setMapFeatures() {
