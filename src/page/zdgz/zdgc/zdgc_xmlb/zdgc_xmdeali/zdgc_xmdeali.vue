@@ -1,12 +1,12 @@
 <template>
-  <div style="margin-top:55px">
+  <div>
     <van-tabs
       title-active-color="#2599e6"
       line-width="90px"
       :sticky="true"
       :ellipsis="false"
       @click="onClick"
-      :offset-top="54"
+      :offset-top="111"
       title-inactive-color="#333333"
     >
       <van-tab name="1">
