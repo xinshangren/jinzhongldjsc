@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top:54px;">
+  <div>
     <van-tabs
       @touchmove.prevent
       v-model="active"

@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top:55px;">
+  <div>
     <van-tabs
       v-model="active"
       :sticky="false"
