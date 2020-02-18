@@ -84,35 +84,27 @@
       style="background:#ffffff;height:540px;width:100%;margin-top:8px;padding-top:7px;border-top:7px solid #F1F4F6;"
     >
       <div style="display:flex;">
-        <div class="echars_titile_div">任务监管情况</div>
-        <div @click="showSelectArea(2)" style="display:flex;margin-left:17px;">
-          <div id="twoTimeDivId" style="color:#3097fb;font-size:14px;line-height:22px;">选择网格</div>
-          <img
-            style="height: 11px;margin-top: 6px;margin-left: 5px;"
-            src="../../../../../assets/img/air_data_arrow.png"
-          />
+          <div class="echars_titile_div">任务监管情况</div>
+          <div @click="showSelectArea(2)" style="display:flex;margin-left:17px;">
+            <div id="twoTimeDivId" style="color:#3097fb;font-size:14px;line-height:22px;">选择网格</div>
+            <img
+              style="height: 11px;margin-top: 6px;margin-left: 5px;"
+              src="../../../../../assets/img/air_data_arrow.png"
+            />
         </div>
-         <div
-        @click="showSelectTime(4)"
-        style="display: flex;margin-left:17px;"
-      >
-        <div
-          style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;"
-        >{{currentYear4}}</div>
-       
-          <img
-            style="height: 11px;margin-top: 6px;margin-left: 5px;"
-            src="../../../../../assets/img/air_data_arrow.png"
-          />
-       
+        <div @click="showSelectTime(4)" style="display: flex;margin-left:17px;">
+            <div style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;">{{currentYear4}}</div>
+            <img style="height: 11px;margin-top: 6px;margin-left: 5px;" src="../../../../../assets/img/air_data_arrow.png"/>
+        </div>
       </div>
-      </div>
+
       <div
         class="van-hairline--bottom"
         style="margin-top: 8px;margin-left: 10px;margin-right: 10px;"
       ></div>
      
       <div ref="myCharts4" style="height:210px;width:100%;"></div>
+
       <div style="display:flex;margin: 20 auto;">
         <div style="width:50%;">
           <div
