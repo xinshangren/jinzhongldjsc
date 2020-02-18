@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top:0px;">
+  <div>
     <van-popup v-model="show" @opened="openPop" position="bottom" :style="{ height: '200px' }">
       <van-datetime-picker
         v-model="currentDate"
