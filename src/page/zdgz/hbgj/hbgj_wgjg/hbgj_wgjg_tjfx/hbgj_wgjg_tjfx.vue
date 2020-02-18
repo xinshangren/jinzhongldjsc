@@ -63,7 +63,7 @@
             style="display: flex;width: 100px;border-radius: 10px;background: #f3f3f3;margin:0 84px;"
           >
             <div
-              style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;text-align: right;width: 70%;"
+              style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;"
             >{{currentYear3}}</div>
               <img
                 style="height: 11px;margin-top: 6px;margin-left: 5px;"
@@ -105,14 +105,14 @@
      
       <div ref="myCharts4" style="height:210px;width:100%;"></div>
 
-      <div style="display:flex;margin: 20 auto;">
+       <div style="display:flex;margin: 20px auto;">
         <div style="width:50%;">
           <div
             @click="showSelectTime(5)"
             style="display: flex;width: 100px;border-radius: 10px;background: #f3f3f3;margin:0 84px;"
           >
             <div
-              style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;text-align: right;width: 70%;"
+              style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;"
             >{{currentYear5}}</div>
               <img
                 style="height: 11px;margin-top: 6px;margin-left: 5px;"
