@@ -351,6 +351,12 @@ export default {
     upYearClick: function() {
       var year = this.nowYear.split("-")[0];
       var month = this.nowYear.split("-")[1];
+      //取到固定值最大年
+      var maxYear = this.maxDataDate.split("-")[0];
+      //取到固定值最小年
+      var minYear=parseInt(maxYear)-1;
+      //取到固定值最小月
+      var minMonth = this.maxDataDate.split("-")[1];
       if (parseInt(month) == 2) {
         year = parseInt(year) - 1;
         month = 12;
@@ -360,6 +366,16 @@ export default {
       if (parseInt(month) < 10) {
         month = "0" + month;
       }
+      //做比较
+      if (year < minYear) {
+        this.$toast("上一年没有数据");
+        return;
+      } else if (year == minYear) {
+        if (month < minMonth) {
+          this.$toast("上一月没有数据");
+          return;
+        }
+      }
       this.nowYear = year + "-" + month;
       this.$refs.child1.changeTitme(this.nowYear);
     },
@@ -368,7 +384,9 @@ export default {
       var month = this.nowYear.split("-")[1];
 
       var maxYear = this.maxDataDate.split("-")[0];
+      console.log(maxYear);
       var maxMonth = this.maxDataDate.split("-")[1];
+       console.log(maxMonth);
       if (parseInt(month) == 12) {
         year = parseInt(year) + 1;
         month = 2;
