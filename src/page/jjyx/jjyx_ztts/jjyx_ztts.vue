@@ -350,7 +350,11 @@ export default {
     },
     upYearClick: function() {
       var year = this.nowYear.split("-")[0];
+       console.log(year);
       var month = this.nowYear.split("-")[1];
+      console.log(month);
+       var minYear = '2018';
+      var minMonth = '12';
       if (parseInt(month) == 2) {
         year = parseInt(year) - 1;
         month = 12;
@@ -359,6 +363,17 @@ export default {
       }
       if (parseInt(month) < 10) {
         month = "0" + month;
+      }
+       console.log(year);  //2019
+         console.log(month); //11
+       if (year < minYear) {
+        this.$toast("上一年没有数据");
+        return;
+      } else if (year == minYear) {
+        if (month < minMonth) {
+          this.$toast("上一月没有数据");
+          return;
+        }
       }
       this.nowYear = year + "-" + month;
       this.$refs.child1.changeTitme(this.nowYear);
@@ -374,6 +389,7 @@ export default {
         month = 2;
       } else {
         month = parseInt(month) + 1;
+        console.log(month);
       }
       if (parseInt(month) < 10) {
         month = "0" + month;

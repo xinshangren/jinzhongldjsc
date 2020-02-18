@@ -286,6 +286,7 @@ export default {
   },
   methods: {
     onClick: function() {
+      console.log(1111111111);
       $("#ldzc_ldcx_content_Id").show();
     },
     hidepopu: function() {

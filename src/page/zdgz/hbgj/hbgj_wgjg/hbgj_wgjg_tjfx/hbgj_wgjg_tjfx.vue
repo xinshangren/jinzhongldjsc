@@ -34,26 +34,28 @@
             src="../../../../../assets/img/air_data_arrow.png"
           />
         </div>
+         <div
+        @click="showSelectTime(2)"
+        style="display:flex;margin-left:17px;"
+      >
+        <div
+          style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;"
+        >{{currentYear2}}</div>
+        
+          <img
+            style="height: 11px;margin-top: 6px;margin-left: 5px;"
+            src="../../../../../assets/img/air_data_arrow.png"
+          />
+      
+      </div>
       </div>
       <div
         class="van-hairline--bottom"
         style="margin-top: 8px;margin-left: 10px;margin-right: 10px;"
       ></div>
-      <div
-        @click="showSelectTime(2)"
-        style="display: flex;width: 100px;border-radius: 10px;background: #f3f3f3;margin: 0 auto;"
-      >
-        <div
-          style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;text-align: right;width: 50%;"
-        >{{currentYear2}}</div>
-        <div style="width:50%;">
-          <img
-            style="height: 11px;margin-top: 6px;margin-left: 5px;"
-            src="../../../../../assets/img/air_data_arrow.png"
-          />
-        </div>
-      </div>
+     
       <div ref="myCharts2" style="height:210px;width:100%;"></div>
+
       <div style="display:flex;margin: 0 auto;">
         <div style="width:50%;">
           <div
@@ -63,12 +65,10 @@
             <div
               style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;text-align: right;width: 70%;"
             >{{currentYear3}}</div>
-            <div style="width:50%;">
               <img
                 style="height: 11px;margin-top: 6px;margin-left: 5px;"
                 src="../../../../../assets/img/air_data_arrow.png"
               />
-            </div>
           </div>
         </div>
         <div id="echar1typeId" class="chars_title_select">
@@ -92,27 +92,28 @@
             src="../../../../../assets/img/air_data_arrow.png"
           />
         </div>
+         <div
+        @click="showSelectTime(4)"
+        style="display: flex;margin-left:17px;"
+      >
+        <div
+          style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;"
+        >{{currentYear4}}</div>
+       
+          <img
+            style="height: 11px;margin-top: 6px;margin-left: 5px;"
+            src="../../../../../assets/img/air_data_arrow.png"
+          />
+       
+      </div>
       </div>
       <div
         class="van-hairline--bottom"
         style="margin-top: 8px;margin-left: 10px;margin-right: 10px;"
       ></div>
-      <div
-        @click="showSelectTime(4)"
-        style="display: flex;width: 100px;border-radius: 10px;background: #f3f3f3;margin: 0 auto;"
-      >
-        <div
-          style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;text-align: right;width: 50%;"
-        >{{currentYear4}}</div>
-        <div style="width:50%;">
-          <img
-            style="height: 11px;margin-top: 6px;margin-left: 5px;"
-            src="../../../../../assets/img/air_data_arrow.png"
-          />
-        </div>
-      </div>
+     
       <div ref="myCharts4" style="height:210px;width:100%;"></div>
-      <div style="display:flex;margin: 0 auto;">
+      <div style="display:flex;margin: 20 auto;">
         <div style="width:50%;">
           <div
             @click="showSelectTime(5)"
@@ -121,12 +122,10 @@
             <div
               style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;text-align: right;width: 70%;"
             >{{currentYear5}}</div>
-            <div style="width:50%;">
               <img
                 style="height: 11px;margin-top: 6px;margin-left: 5px;"
                 src="../../../../../assets/img/air_data_arrow.png"
               />
-            </div>
           </div>
         </div>
         <div id="echar2typeId" class="chars_title_select">
