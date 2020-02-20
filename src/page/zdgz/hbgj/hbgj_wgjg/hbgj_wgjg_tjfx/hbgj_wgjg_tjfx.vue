@@ -63,7 +63,7 @@
             style="display: flex;width: 100px;border-radius: 10px;background: #f3f3f3;margin:0 84px;"
           >
             <div
-              style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;"
+              style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;margin-left :29px;"
             >{{currentYear3}}</div>
               <img
                 style="height: 11px;margin-top: 6px;margin-left: 5px;"
@@ -112,7 +112,7 @@
             style="display: flex;width: 100px;border-radius: 10px;background: #f3f3f3;margin:0 84px;"
           >
             <div
-              style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;"
+              style="color: rgb(48, 151, 251);font-size: 14px;line-height: 22px;margin-left :29px;"
             >{{currentYear5}}</div>
               <img
                 style="height: 11px;margin-top: 6px;margin-left: 5px;"
